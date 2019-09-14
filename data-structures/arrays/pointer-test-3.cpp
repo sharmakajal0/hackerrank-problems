@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
     std::cout << &pointer_to_x << std::endl;
     std::cout << &x << std::endl;
     std::cout << **pointer_to_pointer_to_pointer_to_x << std::endl;
-    std::cout << ***pointer_to_pointer_to_pointer_to_x << std::endl;
+    std::cout << ** *pointer_to_pointer_to_pointer_to_x << std::endl;
 
     return 0;
 }
