@@ -1,0 +1,5 @@
+{
+    "python.pythonPath": "py3.7env/bin/python",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
+}
