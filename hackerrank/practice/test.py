@@ -10,12 +10,12 @@ def bubble_sort(arr, n):
 
     count_size = maximum - minimum + 1
     counts = [0] * count_size
-    print_array(counts)
+    # print_array(counts)
     
     for i in range(n):
         counts[arr[i] - minimum] += 1
 
-    print_array(counts)
+    # print_array(counts)
 
     pairs = 0
 
@@ -27,7 +27,7 @@ def print_array(test_array):
     print(' '.join(map(str, test_array)))
 
 size = int(input())
-array = list(input().split())
-print_array(array)
+array = list(map(int, input().split(" ")))
+# print_array(array)
 bubble_sort(array, size)
-print_array(array)
+# print_array(array)
