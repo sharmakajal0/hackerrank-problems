@@ -1,26 +1,22 @@
 #!/usr/bin/env python
 
-def bubble_sort(arr, n):
-    minimum, maximum = 100000000, -100000000
-    for i in range(n):
-        if minimum > arr[i]:
-            minimum = arr[i]
-        if arr[i] > maximum:
-            maximum = arr[i]
-
-    count_size = maximum - minimum + 1
-    counts = [0] * count_size
-    # print_array(counts)
+def bubble_sort(arr):
+    counts = {}
     
-    for i in range(n):
-        counts[arr[i] - minimum] += 1
+    for i in arr:
+        if i in counts:
+            counts[i] += 1
+        else:
+            counts[i] = 1
 
-    # print_array(counts)
+    # print(counts)
 
     pairs = 0
 
     for i in counts:
-        pairs += i // 2
+        pairs += counts[i] // 2
+    # for i, value in enumerate(counts):
+    #     pairs += value // 2
     print(pairs)
 
 def print_array(test_array):
@@ -28,6 +24,5 @@ def print_array(test_array):
 
 size = int(input())
 array = list(map(int, input().split(" ")))
-# print_array(array)
-bubble_sort(array, size)
-# print_array(array)
+
+bubble_sort(array)
