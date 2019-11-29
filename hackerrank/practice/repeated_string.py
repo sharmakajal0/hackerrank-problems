@@ -2,19 +2,13 @@
 
 '''module for repeated string'''
 
-def repeated_string(test_string, string_length):
+def repeated_string(test_string):
 
-    '''function definition for repeated string'''
-    A = 0
-    for i in range(len(test_string)):
-        if test_string[i] == 'a':
-            A += 1
-    # number of occurences of the whole string
-    occurences = int((string_length/len(test_string))*A)
+    '''function definition for counting the count of a in repeated string'''
+    occurences_of_string = INTEGER_LENGTH // len(test_string)
+    remainder = test_string[:INTEGER_LENGTH % len(test_string)]
+    return test_string.count("a") * occurences_of_string + remainder.count("a")
 
-    return occurences
-
-TEST_STRING = 'aba'
-STRING_LENGTH = 100
-RESULT = repeated_string(TEST_STRING, STRING_LENGTH)
-print(RESULT)
+TEST_STRING = input()
+INTEGER_LENGTH = int(input())
+print(repeated_string(TEST_STRING))
