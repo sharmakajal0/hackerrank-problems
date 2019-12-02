@@ -1,12 +1,12 @@
 #include<iostream>
 
-void leftRotatebyOne(int* arr, int n);
+void leftRotatebyOne(int arr[1000000], int n);
 
-int leftRotate(int* arr, int d, int n);
+int leftRotate(int arr[1000000], int d, int n);
 
-void printArray(int* arr, int size);
+void printArray(int arr[1000000], int size);
 
-void leftRotatebyOne(int* arr, int n)
+void leftRotatebyOne(int arr[1000000], int n)
 {
     int temp = arr[0];
     for (int i = 0; i < n - 1; i++)
@@ -16,7 +16,7 @@ void leftRotatebyOne(int* arr, int n)
     arr[n - 1] = temp;
 }
 
-int leftRotate(int* arr, int d, int n)
+int leftRotate(int arr[1000000], int d, int n)
 {
     for (int i = 0; i < d; i++)
     {
@@ -26,7 +26,7 @@ int leftRotate(int* arr, int d, int n)
     return 0;
 }
 
-void printArray(int* arr, int size)
+void printArray(int arr[1000000], int size)
 {
     for (int i = 0; i < size; i++)
     {
@@ -38,7 +38,7 @@ void printArray(int* arr, int size)
 int main()
 {
     int n, d;
-    int* arr;
+    int arr[1000000];
     std :: cin >> n >> d;
     for (int i = 0; i < n; i++)
     {
