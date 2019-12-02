@@ -37,9 +37,13 @@ void printArray(int* arr, int size)
 
 int main()
 {
-    int n = 7, d = 2;
-    int arr[] = {1, 2, 3, 4, 5, 6, 7};
-    printArray(arr, n);
+    int n, d;
+    int* arr;
+    std :: cin >> n >> d;
+    for (int i = 0; i < n; i++)
+    {
+        std :: cin >> arr[i];
+    }
     leftRotate(arr, d, n);
     printArray(arr, n);
 
