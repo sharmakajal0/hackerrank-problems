@@ -1,58 +1,30 @@
 #include<iostream>
-#include<vector>
-#include<array>
 
-int minimum_distances(int array[100000], int n);
+int minimum_distance(int arr[100000], int n);
 
-int minimum_element(int* distances, int distances_length);
-
-int minimum_element(int* distances, int distances_length)
+int minimum_distance(int arr[100000], int n)
 {
-    int min = distances[0];
-    for (int i = 0; i < distances_length; i++)
-    {
-        if (min > distances[i])
-        {
-            min = distances[i];
-        }
-    }
-    std :: cout << min;
-    return 0;
-}
-
-int minimum_distances(int array[100000], int n)
-{    
-    std :: vector <int> distances; 
+    int distance;
+    int minimum_distance;
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
         {
-            if (array[i] == array[j] && i !=j)
+            if(arr[i] == arr[j] && i != j)
             {
-                int distance = j - i;
-                if (distance < 0)
+                distance = abs(j - i);
+                minimum_distance = distance;
+                if (distance < minimum_distance)
                 {
-                    distance = distance * (-1);
+                    minimum_distance = distance;
                 }
-                distances.push_back(distance);
             }
-        }
+        }   
     }
-
-    int distances_length = distances.size();
-    if (distances.size() > 0)
-    {
-        int minimum_value = minimum_element(distances, distances_length);
-        std :: cout << minimum_value;
-    }
-    else
-    {
-        std :: cout << "-1";
-    }
-    return 0;
+    return minimum_distance;
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
     int test_array[100000];
     int n;
@@ -61,8 +33,8 @@ int main(int argc, char const *argv[])
     {
         std :: cin >> test_array[i];
     }
-
-    minimum_distances(test_array, n);
     
+    std :: cout << minimum_distance(test_array, n) << std :: endl;
+
     return 0;
 }
