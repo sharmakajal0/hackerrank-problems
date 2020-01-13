@@ -5,11 +5,20 @@ using namespace std;
 string ltrim(const string &);
 string rtrim(const string &);
 vector<string> split(const string &);
+int compare(const int, const int);
+int max(const int, const int);
 
 // Complete the compareTriplets function below.
-vector<int> compareTriplets(vector<int> a, vector<int> b) {
+vector<int> compareTriplets(const vector<int> a, const vector<int> b) {
+    vector<int> result(2, 0);
+    for(int i=0; i<a.size(); i++) {
+        const int compare_result = compare(a[i], b[i]);
+        result[0] += max(compare_result, 0);
+        result[1] += max(-1 * compare_result, 0);
+        
+    }
 
-
+    return result;
 }
 
 int main()
@@ -57,6 +66,20 @@ int main()
     fout.close();
 
     return 0;
+}
+
+int compare(const int a, const int b) {
+    if (a < b) {
+        return -1;
+    } else if (a == b) {
+        return 0;
+    } else {
+        return 1;
+    }
+}
+
+int max(const int a, const int b) {
+    return a < b? b: a;
 }
 
 string ltrim(const string &str) {
