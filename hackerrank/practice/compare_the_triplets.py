@@ -1,33 +1,38 @@
 #!/usr/bin/env python
 
+'''module for comparison of triplets'''
+
 import os
 
 # Complete the compareTriplets function below.
-def compareTriplets(a, b):
+def compare_triplets(list_a, list_b):
+
+    '''function for comparison of triplets'''
     alice_score, bob_score = 0, 0
-    for i in range(len(a)):
-        for j in range(len(b)):
-            if i == j and a[i] > b[j]:
+    for i, value_i in enumerate(list_a):
+        for j, value_j in enumerate(list_b):
+            if i == j and value_i > value_j:
                 alice_score += 1
-            elif i == j and a[i] < b[j]:
+            elif i == j and value_i < value_j:
                 bob_score += 1
     return alice_score, bob_score
 
 
 if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+    FPTR = open(os.environ['OUTPUT_PATH'], 'w')
 
-    a = list(map(int, input().rstrip().split()))
+    LIST_A = list(map(int, input().split()))
 
-    b = list(map(int, input().rstrip().split()))
-    
-    # a = [17, 28, 30]
+    LIST_B = list(map(int, input().split()))
 
-    # b = [99, 16, 8]
+    # LIST_A = [17, 28, 30]
 
-    result = compareTriplets(a, b)
+    # LIST_B = [99, 16, 8]
 
-    fptr.write(' '.join(map(str, result)))
-    fptr.write('\n')
+    RESULT = compare_triplets(LIST_A, LIST_B)
+    print(RESULT)
 
-    fptr.close()
+    FPTR.write(' '.join(map(str, RESULT)))
+    FPTR.write('\n')
+
+    FPTR.close()
