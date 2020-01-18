@@ -1,0 +1,2 @@
+# ./create_sample_problem_directory.sh sample-prg
+# ../compile_and_test.sh sample-prg
