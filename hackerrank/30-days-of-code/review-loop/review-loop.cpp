@@ -22,9 +22,10 @@ int main() {
                 right.push_back(inputString[i]);
             }
         }
-        cout << left << " " << right << endl;
+
+        cout << left << endl;
+        // cout << left << " " << right << endl;
         // printf(cout, "%s %s", left, right);
-        
     }
     // std::cout << "review-loop cpp program" << std::endl;
     return 0;
