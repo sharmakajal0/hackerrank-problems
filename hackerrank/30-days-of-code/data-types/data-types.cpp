@@ -35,3 +35,9 @@ int main() {
 
     return 0;
 }
+#include<iostream>
+
+int main() {
+    std::cout << "data-types cpp program" << std::endl;
+    return 0;
+}
