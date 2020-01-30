@@ -1,32 +1,69 @@
-#include <iostream>
 #include <string>
+#include <cmath>
 #include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <iostream>
 
 using namespace std;
 
-int main() {
-    int testCases;
-    string inputString;
-    cin >> testCases;
-    for (int i = 0; i < testCases; i++)
-    {
-        getline(cin, inputString);
-        string left = "";
-        string right = "";
-        int length = sizeof(inputString);
-        for(int i=0;i<length;i++){
-            if(i % 2 == 0){
-                left.push_back(inputString[i]);
-            } else
-            {
-                right.push_back(inputString[i]);
-            }
-        }
+void input(int &);
+void input(long &);
+void input(float &);
+void input(double &);
+void input(string &);
 
-        cout << left << endl;
-        // cout << left << " " << right << endl;
-        // printf(cout, "%s %s", left, right);
+#define STREAM_SIZE 10001
+
+
+int main() {
+    int test_count;
+    input(test_count);
+
+    for (int i = 0; i < test_count; i++)
+    {
+        string s;
+        string left;
+        string right;
+        input(s);
+        // cout << s << endl;
+        
+        for (int j = 0; j < s.length(); j+=2)
+        {
+            cout << s[j];
+        }
+        cout << " ";
+        for (int j = 1; j < s.length(); j+=2)
+        {
+            cout << s[j];
+        }
+        cout << endl;
     }
-    // std::cout << "review-loop cpp program" << std::endl;
+    
+
     return 0;
+}
+
+
+void input(int &var) {
+    cin >> var;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+}
+void input(long &var) {
+    cin >> var;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+}
+void input(float &var) {
+    cin >> var;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+}
+void input(double &var) {
+    cin >> var;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+}
+void input(string &var) {
+    char buffer[STREAM_SIZE];
+    cin.getline(buffer, STREAM_SIZE, '\n');
+    var.assign(buffer);
 }
