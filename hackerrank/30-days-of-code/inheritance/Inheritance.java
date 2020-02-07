@@ -24,9 +24,9 @@ class Inheritance {
 class Student extends Inheritance{
 	private int[] testScores;
 
-    /*	
+    /*
     *   Class Constructor
-    *   
+    *
     *   @param firstName - A string denoting the Person's first name.
     *   @param lastName - A string denoting the Person's last name.
     *   @param id - An integer denoting the Person's ID number.
@@ -37,7 +37,7 @@ class Student extends Inheritance{
       super(firstName, lastName, identification);
       this.testScores = scores;
     }
-    /*	
+    /*
     *   Method Name: calculate
     *   @return A character denoting the grade.
     */
