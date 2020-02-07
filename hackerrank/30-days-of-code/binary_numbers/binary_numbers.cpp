@@ -1,39 +1,50 @@
-#include <iostream>
-#include <string>
-#include <algorithm>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-int get_number_of_digits(int num) {
-    int digits = 1;
-    
-    while (num/10 != 0) {
-        num /= 10;
-        digits += 1;
-    }
+// string convertToBinary(int n);
 
-    return digits;
+std::string convertToBinary(int n) {
+    std::string binary;
+    int remainder;
+
+    while (n > 0){
+        remainder = n % 2;
+        n = (n / 2);
+        std::string s = to_string(remainder);
+        // cout << remainder << endl;
+        binary += s;
+    }
+    return binary;
 }
 
-void print_digits(int num) {
-    int num_digits = get_number_of_digits(num);
-    bool print = true;
-    char digits[num_digits] = {'\0'};
-    int j=0;
-    for(int i=0; i<num_digits; i++) {
-        digits[j++] = num % 10 + 48;
-        print = !print;
-        num /= 10;
+int main()
+{
+    int n;
+    cin >> n;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    std::string s = convertToBinary(n);
+    // cout << s << endl;
+    // std::string s = std::to_string(binaryNumber);
+
+    int counter = 0;
+    int j = 0;
+
+    int length = s.size();
+
+    for (int i = 0; i < length; i++)
+    {
+        if (s[i] == '1'){
+            j++;
+        }
+        else {
+            j = 0;
+        }
+        if (j > counter) {
+            counter = j;
+        }
     }
-
-    reverse(digits, digits+j);
-    cout << digits << endl;
-}
-
-int main() {
-    // int n;
-    // cin >> n;
-    print_digits(13);
+    cout << counter << endl;
 
     return 0;
 }
