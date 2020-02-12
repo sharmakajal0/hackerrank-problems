@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "py3.6-env/bin/python3.6",
+    "python.pythonPath": "/usr/bin/python",
     "files.associations": {
         "algorithm": "cpp"
     }
