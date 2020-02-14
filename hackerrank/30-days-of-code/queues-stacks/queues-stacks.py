@@ -1,36 +1,30 @@
-#!/usr/bin/env python
 import sys
 
 class Solution:
-    def __init__(self, limit):
-        self.limit = limit
+    def __init__(self):
+        self.stack = []
         self.queue = []
-        self.front = None
-        self.rear = None
-        self.size = 0
-
-    # Write your code here
-    # Functions
-    # pushCharacter
     def pushCharacter(self, data):
-        
-    # enqueueCharacter
-    def enqueueCharacter(self, item):
-        if self.size >= self.limit:
-            print("Queue Overflow")
-            return
+        self.stack.append(data)
+    
+    def enqueueCharacter(self, data):
+        self.queue.append(data)
+    
+    def popCharacter(self):
+        return self.stack.pop(0)
+    
+    def dequeueCharacter(self):
+        return self.queue.pop(-1)
+    
+    def reverse(self):
+        return self.stack[::-1]
+    
+
+        rev = reverse()
+        if self.queue == rev:
+            return True
         else:
-            self.queue.append(item)
-        
-        if self.front is None:
-            self.front = self.rear = 0
-        else:
-            self.rear = self.size
-        self.size += 1
-        print(self.que)
-    # dequeueCharacter
-    # popCharacter
-    # isPalindrome
+            return False
 # read the string s
 s=input()
 #Create the Solution class object
