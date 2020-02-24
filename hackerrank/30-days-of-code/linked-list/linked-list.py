@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 class Node:
     def __init__(self,data):
         self.data = data
@@ -11,21 +9,12 @@ class Solution:
             print(current.data,end=' ')
             current = current.next
 
-    def setData(self, data):
-        self.data = data
-
-    def getData(self):
-        return self.data
-
     def insert(self,head,data): 
-        newNode = Node()
-        newNode.setData(data)
-
-        current = self.head
-        while current.getNext() != None:
-            current = current.getNext()
-        current.setNext(newNode)
-        self.length += 1
+        if head is None:
+            return
+        new_node = Node(data)
+        new_node.next = head.next
+        head.next = new_node
 
 mylist= Solution()
 T=int(input())
@@ -33,4 +22,4 @@ head=None
 for i in range(T):
     data=int(input())
     head=mylist.insert(head,data)    
-mylist.display(head); 	  
+mylist.display(head)
