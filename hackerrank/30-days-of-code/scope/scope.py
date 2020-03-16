@@ -5,14 +5,14 @@ class Difference:
         self.__elements = a
 
 	# Add your code here
-    # def computeDifference(self):
-    #     maxDifference = 0
-    #     for i in range(len(a)):
-    #         for j in range(len(a)):
-    #             difference = abs(a[i] - a[j])
-    #             if difference > maxDifference:
-    #                 maxDifference = difference
-    #     self.maximumDifference = maxDifference
+    def computeDifference(self):
+        maxDifference = 0
+        for i in range(len(a)):
+            for j in range(len(a)):
+                difference = abs(a[i] - a[j])
+                if difference > maxDifference:
+                    maxDifference = difference
+        self.maximumDifference = maxDifference
     
 
 # End of Difference class
