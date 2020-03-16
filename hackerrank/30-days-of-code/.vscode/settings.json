@@ -9,7 +9,8 @@
         "system_error": "cpp",
         "array": "cpp",
         "regex": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "iostream": "cpp"
     },
     "files.exclude": {
         "**/.classpath": true,
