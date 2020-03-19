@@ -2,14 +2,13 @@ import java.util.*;
 import java.io.*;
 
 class Calculator{
-    public String power(int base, int exponent){
+    public int power(int base, int exponent) throws Exception{
         if ((base >= 0) && (exponent >= 0)){
-            double result = Math.pow(base, exponent);
-            String ans = Double.toString(result);
-            return ans;
+            int result = (int)Math.pow(base, exponent);
+            return result;
         }
         else {
-            return "n and p should be non negative";
+            throw new Exception("n and p should be non-negative");
         }
     }
 }
