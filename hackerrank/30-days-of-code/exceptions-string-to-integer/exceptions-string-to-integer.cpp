@@ -27,12 +27,12 @@ using namespace std;
 int main(){
     string S;
     cin >> S;
-    int S = std::
-    if (true){
-        cout << S << endl;
+    try{
+        int s = stoi(S);
+        cout << s << endl;
     }
-    else{
-        cout << "Bad string" << endl;
+    catch(invalid_argument const &e){
+        cout << "Bad String" << endl;
     }
     return 0;
 }
