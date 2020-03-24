@@ -1,3 +1,9 @@
 #!/usr/bin/env python
 
-print('stacks-using-arrays python program')
+class Stack:
+    def __init__(self):
+        self.arr = []
+        self.top = -1
+    
+    def push(i):
+        self.arr.append(i)
